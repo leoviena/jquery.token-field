@@ -8,9 +8,10 @@ jquery plugin to deal with tokenized input (ie. tags or email addresses)
 
 2. Include javascript and stylesheets in your html.
 
-        <script src="/javascripts/jquery.js" type="text/javascript"></script>
-        <script src="/javascripts/jquery.token-field.js" type="text/javascript"></script>
-        <link rel="stylesheet" href="/stylesheets/token-field.css" type="text/css" media="screen">
+		 <script src="javascripts/jquery.js"></script>
+		 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/0.10.0/lodash.min.js"></script>
+		 <script src="javascripts/jquery.token-field.js" type="text/javascript"></script>
+		 <link rel="stylesheet" href="stylesheets/token-field.css" type="text/css" media="screen">
 
 3. Add textarea or input[type=text] to your html with comma-delimited values.
 
@@ -32,7 +33,7 @@ Default: clear the invalid token
 ### delimiters
 A string containing the characters to recognize as delimiters for tokens.
 
-Default: ', ' (ie. comma and/or space)
+Default: '; ' (ie. comma and/or space)
 
 ### max
 The maximum number of values to allow.
