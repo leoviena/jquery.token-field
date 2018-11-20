@@ -93,9 +93,9 @@
               observeToken($(tokenHtml($(this).attr('name'),$(this).val())).insertBefore($(this).closest('.token-input')));
               if (!settings.nested) {
                 var input = $(this).closest('.token-field').find('input:hidden');
-                var values = input.val().split(',');
+                var values = input.val().split(';');
                 values.splice(values.length-1, 0, $(this).val());
-                input.val(values.join(','));
+                input.val(values.join(';'));
               }
               $(this).val('');
             } else {
@@ -153,7 +153,7 @@
       function parseTokens(text) {
         text = text.replace(/^\s*(.+)\s*$/,'$1');
         if (!text) return [];
-        return $.map(text.split(','), function(v) {
+        return $.map(text.split(';'), function(v) {
           if (isToken(v)) return v;
           console_log('Warning: ignoring bad token - '+v);
           return null;
@@ -164,9 +164,9 @@
         if (!settings.nested) {
           var index = token.siblings('.token').addBack().index(token);
           var input = token.closest('.token-field').find('input:hidden');
-          var values = input.val().split(',');
+          var values = input.val().split(';');
           values.splice(index, 1);
-          input.val(values.join(','));
+          input.val(values.join(';'));
         }
         token.remove();
       }
@@ -200,7 +200,7 @@
         .append("<div style='clear:both'></div>")
         .replaceAll(this);
         if (!settings.nested)
-          field.prepend("<input type='hidden' value='"+tokens.join(',')+"' name='"+name+"'/>")
+          field.prepend("<input type='hidden' value='"+tokens.join(';')+"' name='"+name+"'/>")
         observeTokenField(field);
       });
     };

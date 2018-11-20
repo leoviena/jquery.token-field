@@ -15,7 +15,7 @@ jquery plugin to deal with tokenized input (ie. tags or email addresses)
 
 3. Add textarea or input[type=text] to your html with comma-delimited values.
 
-        <textarea class='email'>one@domain.com,two@other.net,three@somewhere.ca</textarea>
+        <textarea class='email'>one@domain.com;two@other.net;three@somewhere.ca</textarea>
 
 4. Invoke the plugin in your document ready handler.
 
@@ -33,7 +33,7 @@ Default: clear the invalid token
 ### delimiters
 A string containing the characters to recognize as delimiters for tokens.
 
-Default: '; ' (ie. comma and/or space)
+Default: '; ' (ie. semicolon and/or space)
 
 ### max
 The maximum number of values to allow.
